@@ -1,0 +1,138 @@
+/************ COLORS ****************/
+:root {
+  --colortext: rgb(0, 0, 0);
+  --background: #dedede;
+}
+
+/************ ICONES BOUTON ************/
+button i {
+  margin-right: 5px;
+}
+
+/************ TABLEAU ************/
+table td {
+  vertical-align: middle !important;
+  border-bottom: black solid 2px;
+}
+
+td {
+  font-size: larger;
+  border-top: 2px solid black;
+}
+
+.content table td {
+  border: none;
+}
+
+/************ SECTION ADMIN + SECTION AJOUTER UN PROJET ************/
+.adminContainer, .add {
+  margin-top: 15px;
+}
+
+/************ TITRE PAGE ADMIN ************/
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+}
+
+.titrebutton {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block img {
+  margin-right: 5px;
+  padding-bottom: 0;
+  padding-top: 20px;
+}
+
+.content h1 {
+  margin-top: 50px;
+}
+
+
+.is-success a {
+  color: white;
+}
+
+
+button .is-danger {
+  margin-top: 20px;
+}
+
+.is-danger a {
+  color: white;
+}
+
+.hero, .is-link {
+  background-color: var(--background);
+  padding: 15px;
+}
+
+.hero.is-link .title {
+  color: var(--colortext);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.title {
+  color: var(--colortext);
+  text-align: center;
+}
+
+.title:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 100px;
+}
+
+@media screen and (min-width: 635px) {
+  .titrebutton .is-danger {
+    margin-top: 47px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+
+    .table thead {
+    display: none;
+    }
+
+    .table tr{
+    display: block;
+    margin-bottom: 40px;
+    }
+
+    .table td {
+    display: block;
+    text-align: right;
+    }
+
+    .table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    }
+
+    .titrebutton {
+      display: block;
+    }
+
+    .content h1 {
+      margin-top: 0;
+      justify-content: center;
+      text-align: center;
+    }
+}

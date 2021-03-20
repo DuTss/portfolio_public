@@ -1,0 +1,68 @@
+<%- include('partials-admin/header-admin.ejs') %>
+
+<!------------------- PAGE LOGIN ------------------------>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <a href="/">
+        <img src="/images/logo1.png" alt="logo" class="logo">
+      </a>
+      
+      <div class="columns is-centered">
+        <div class="column is-4-tablet is-4-desktop is-4-widescreen">
+          <form action="/auth/login" method="POST" class="box">
+            <!----------------------------------------- TITRE ------------------------------------------->
+            <h1 class="title">Admin</h1>
+
+            <!----------------- INPUT EMAIL LOGIN ------------------>
+            <div class="field">
+              <% if(message.length > 0) { %>
+              <div class="notification is-primary"><%= message %></div>
+              <%}%>
+              <label for="" class="label">Email</label>
+              <div class="control has-icons-left">
+                <input
+                  placeholder="Inscris ton email.."
+                  class="input"
+                  name="email"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+
+            <!----------------- INPUT MOT DE PASSE LOGIN ------------------>
+            <div class="field">
+              <label for="" class="label">Mot de passe</label>
+              <div class="control has-icons-left">
+                <input
+                  type="password"
+                  placeholder="Inscris ton mot de passe.."
+                  class="input"
+                  name="password"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <!----------------- BOUTON SE CONNECTER ------------------>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link">
+                  <i class="fas fa-sign-in-alt"></i>Se Connecter
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials-admin/footer-admin.ejs') %>

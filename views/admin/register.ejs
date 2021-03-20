@@ -1,0 +1,92 @@
+<%- include('partials-admin/header-admin.ejs') %>
+<!------------------- PAGE REGISTER ------------------------>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <a href="/">
+        <img src="/images/logo1.png" alt="logo" class="logo">
+      </a>
+      
+      <div class="column is-4 is-offset-4 box">
+        <!----------------- TITRE REGISTER ------------------>
+        <h1 class="title">Créez un compte</h1>
+        <h1 class="avatar has-text-centered section">
+          <i class="fas fa-address-book fa-5x"></i>
+        </h1>
+        <div class="login-form">
+          <form action="/auth/register" method="POST">
+            <% if(message.length > 0) { %>
+            <div class="notification is-danger" style="margin-top: 10px">
+              <%= message %>
+            </div>
+            <%}%>
+
+            <!----------------- INPUT PSEUDO REGISTER ------------------>
+            <div class="field">
+              <label class="label">Pseudo</label>
+              <div class="control has-icons-left">
+                <input
+                  name="pseudo"
+                  class="input"
+                  type="text"
+                  placeholder="Choisis un pseudo.."
+                /><span class="icon is-small is-left"
+                  ><i class="fas fa-user"></i
+                ></span>
+              </div>
+            </div>
+
+            <!----------------- INPUT EMAIL REGISTER ------------------>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input
+                  name="email"
+                  class="input"
+                  type="email"
+                  placeholder="Inscris ton email.."
+                /><span class="icon is-small is-left"
+                  ><i class="fas fa-envelope"></i
+                ></span>
+              </div>
+            </div>
+
+            <!----------------- MOT DE PASSE INPUT REGISTER ------------------>
+            <div class="field">
+              <label class="label">Mot de passe</label>
+              <div class="control has-icons-left">
+                <input
+                  name="password"
+                  class="input"
+                  type="password"
+                  placeholder="Choisis un mot de passe"
+                /><span class="icon is-small is-left"
+                  ><i class="fas fa-lock"></i
+                ></span>
+              </div>
+            </div>
+
+            <!----------------- BOUTON CREER UN COMPTE ------------------>
+            <div class="field">
+              <p class="control">
+                <button class="button is-link is-fullwidth">
+                  <i class="far fa-plus-square"></i>
+                  Créer mon compte
+                </button>
+              </p>
+            </div>
+          </form>
+        </div>
+        <hr />
+
+        <!----------------- BOUTON LOGIN SUR REGISTER ------------------>
+        <div class="forgot-password">
+          <p class="has-text-centered">
+            Déjà inscrit ? <a href="/auth/login">Connecte toi !</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('partials-admin/footer-admin.ejs') %>

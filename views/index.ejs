@@ -1,0 +1,112 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<!------------------- INTRO INDEX ------------------------>
+
+  <div class="container">
+    <div class="div-intro">
+        <img src="./images/logo1.png" alt="logo">
+        <h1 class="title">Bienvenue sur mon portfolio ! <br> Je suis un développeur web et web mobile junior.</h1>
+    </div>    
+  </div>
+
+
+<!------------------- MES PROJETS INDEX ------------------------>
+<section class="section" id="projets">
+  <div class="container">
+    <h2>Mes projets</h2>
+    <div class="columns">      
+      <% projet.forEach(function(projet) {%>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <h3 class="card-title"><a href="/projet/<%= projet.projetId%>"><%=projet.titre%></a></h3>
+            <figure class="image is-4by3">
+              <img src="/images/projets/<%=projet.image%>" alt="projetGitHub" width="auto" height="auto">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="card-text"><%=projet.description%></p>
+            <p class="card-text">Source : <a href="<%= projet.gitUrl %>"><%= projet.gitUrl %></a></p>
+          </div>
+        </div>
+      </div>
+      <%});%>
+    </div>
+  </div>
+</section>
+
+<!------------------- MES COMPETENCES ------------------------>
+<section class="section" id="competences">
+  <div class="container"> 
+    <div class="div">
+      <h2>Mes compétences</h2>      
+        <h3>Front-end</h3>
+          <div class="icones">
+            <img src="/images/html.png" alt="html">
+            <img src="/images/css.png" alt="css">
+            <img src="/images/jslogo.png" alt="javascript">
+            <img class="bulma" src="/images/bulma.png" alt="bulma">
+            <img src="/images/ejs.png" alt="ejs">
+          </div>        
+        <h3>Back-End</h3>
+          <div class="icones">
+            <img class="node" src="/images/nodejs.png" alt="nodeJS">
+            <img src="/images/expressjs.png" alt="expressJS">
+          </div>
+        <h3>Base de données</h3>
+          <div class="icones">          
+            <img class="sql" src="/images/mysql.png" alt="mysql">
+            <img src="/images/mongodb.png" alt="mongodb">
+          </div>
+    </div>
+  </div>
+</section>
+
+<!------------------- COMPETENCES A DEVELOPPER ------------------------>
+<section class="section">
+  <div class="container"> 
+    <div class="div">
+      <h2>Compétences à développer</h2>      
+        <h3>Front-end</h3>
+          <div class="icones">
+            <img src="/images/react.png" alt="React">
+            <img src="/images/vue.png" alt="vueJS">
+            <img src="/images/angular.png" alt="angular">
+            <img src="/images/sass.png" alt="SCSS">
+            <img class="" src="/images/jade.png" alt="jade">
+          </div>        
+        <h3>Back-End</h3>
+          <div class="icones">
+            <img class="node" src="/images/php.png" alt="php">
+            <img src="/images/symfony.png" alt="symfony">
+          </div>
+        <h3>Base de données</h3>
+          <div class="icones"> 
+            <img class="sql" src="/images/postgre.png" alt="postgreSQL">
+            <img src="/images/mariadb.png" alt="mariadb">
+          </div>
+    </div>
+  </div>
+</section>
+
+<!------------------- CONTACT + QUI SUIS-JE ? ------------------------>
+<section class="qui">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-12" id="about">
+        <div class="box">
+        <h3 class="card-title" style="text-align: left;">Qui suis-je ?</h3>
+        <p class="intro">Actuellement en formation développeur web et web mobile, je suis le créateur de ce site, et je réside en France. <br><br>
+           J'ai adoré entreprendre ce cursus et découvrir cet univers de développeur, j'ai pu progresser dans l'identification de problèmes, les résolutions de ces derniers et l'apprentissage des langages de programmation. <br><br>
+           J'aimerai remercier particulièrement mon formateur/youtuber/developpeur full stack de nous avoir appris les valeurs et l'ethique d'un développeur. <br>
+           Il nous a également initié à plusieurs technologies que je voudrais approfondir encore plus suite à cette formation.
+           <br><br>
+            Vous pouvez me contactez via <a href="/">Linkedin</a>, et <a href="https://github.com/DuTss/">GitHub</a></p><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer.ejs') %>

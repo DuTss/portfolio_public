@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+<!------------------- PAGE PROJET SEUL ------------------------>
+<div class="container single-article">
+  <div class="card">
+    <div class="card-image">
+      <h2 class="card-title"><%= projet.titre %></h2>
+      <figure class="image">
+        <img src="/images/projets/<%= projet.image %>" alt="Placeholder image" />
+      </figure>
+    </div>
+    <div class="card-content">
+      <p class="card-text"><%= projet.description %></p>
+      <p class="source"><strong>Source: </strong><a href="<%=projet.gitUrl%>"><%=projet.gitUrl%></a></p>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>

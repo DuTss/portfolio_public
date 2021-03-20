@@ -1,0 +1,86 @@
+<%- include('partials-admin/header-admin.ejs') %>
+<section class="is-link">
+  <div class="container add">
+    <div class="content">
+      <div class="block">
+        <!----------------------------------------- TITRE ------------------------------------------->
+        <h1 class="edit">Modifier ce projet</h1>
+        <a href="/">
+          <img src="/images/logo1.png" alt="logo" class="logo">
+        </a>
+        
+      </div>
+      
+      <!----------------------- FORMULAIRE POUR EDITER UN PROJET ------------------------>
+      <form
+        action="/admin/editer-projet/<%= projet.projetId %>?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="field">
+          <!----------------- INPUT EDITER TITRE ------------------>
+          <label class="label">Titre</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Inscris un titre"
+              name="titre"
+              value="<%=projet.titre%>"
+            />
+          </div>
+        </div>
+
+        <!----------------- INPUT EDITER DESCRIPTION------------------>
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Textarea"
+              name="description"><%=projet.description%></textarea>
+          </div>
+        </div>
+
+        <!----------------- URL INPUT EDITER ------------------>
+        <div class="field">
+          <label class="label">Url du projet :</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Inscris l'URL du projet"
+              name="gitUrl"
+              required
+              value="<%=projet.gitUrl%>"
+            />
+          </div>
+        </div>
+
+        <!----------------- INPUT IMAGE ------------------>
+        <div class="file is-boxed" style="margin-bottom: 10px">
+          <label class="file-label">
+            <input class="file-input" type="file" name="image" />
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label"> Choisis une image.. </span>
+            </span>
+          </label>
+        </div>
+
+        <!----------------- BOUTTON ENREGISTRER MODIFICATION ------------------>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-success">
+              <i class="far fa-share-square"></i>Enregistré modification
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('partials-admin/footer-admin.ejs') %>

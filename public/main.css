@@ -1,0 +1,223 @@
+/************ IMPORT NAVBAR + FOOTER + 404 + ADMIN ************/
+@import url('component/navbar.css');
+@import url('component/404.css');
+@import url('component/footer.css');
+@import url('admin.css');
+
+:root {
+  --colortext: rgb(0, 0, 0);
+  --backgroundcolorcard: #9d9fdf;
+  --background: #dedede;
+}
+
+
+/************ GLOBAL ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+}
+
+/************ LES TITRES ************/
+h1{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;  
+    align-items: center;
+    color: var(--colortext);
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 45px;
+  letter-spacing: 2px;
+  text-transform: uppercase;  
+  align-items: center;
+  color: var(--colortext);
+  font-weight: bold;
+  padding-top: 65px;
+}
+
+h3 {
+  font-size: 20px;
+}
+/************ SECTION ************/
+.section {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+/************ PARAGRAPHE INTRO ************/
+.intro {
+  color: var(--colortext);
+  line-height: 1.8;
+  font-size: larger;
+}
+
+.div-intro {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  height: 450px;
+}
+
+.div-intro img {
+  opacity: 50%;
+  width: 350px;
+  height: auto;
+  position: relative;
+  top: 50px;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  bottom: 500px;
+  line-height: 3;
+  justify-content: center;
+  font-size: 50px;
+}
+
+/************ LES CARDS PROJETS ************/
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--backgroundcolorcard);
+  color: var(--colortext);
+}
+
+.card-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--colortext);
+}
+
+a {
+  color: var(--colortext);
+}
+
+.card-title a:hover {
+  color: #464646;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.card-content {
+  padding: 5px;
+}
+
+.card img {
+  border-radius: 2px;
+}
+
+.card-text {
+  font-size: 19px;
+  margin: 10px 10px;
+}
+
+/************ LOGO DES COMPETENCES ************/
+.icones {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  box-shadow: 6px 6px 1px 0.5px rgba(0, 0, 255, .2);
+  height: 150px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.icones img {
+  width: 9%;
+  height: auto;
+  margin: 16px 0px 20px;
+}
+
+.icones .bulma, .icones .node, .icones .sql {
+  width: 9%;
+  height: 50%;
+  margin: 35px 0px 20px;
+}
+
+/************ ICONES BOUTON ************/
+button i {
+  margin-right: 5px;
+}
+
+.label {
+  font-size: 1.5em;
+}
+
+.box p {
+  line-height: 2;
+}
+
+.box {
+  background-color: var(--backgroundcolorcard);
+}
+
+.quicon {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.qui {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    position:relative;
+    font-size: 20px;
+    bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .icones .bulma, .icones .node, .icones .sql {
+    width: 50px;
+    height: 20px;
+    margin-bottom: 5px;
+  }
+
+  .icones {
+    display: flex;
+    justify-content: space-around;
+    border: none;
+    box-shadow: 3px 3px 1px 0.5px rgba(0, 0, 255, .2);
+    height: 60px;
+    background-color: #dddddd;
+  }
+  
+  .icones img {
+    width: 45px;
+    height: 50px;
+    margin-top: 5px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+}

@@ -1,0 +1,82 @@
+<%- include('partials-admin/header-admin.ejs') %>
+<section class="is-link">
+  <div class="container add">
+    <div class="content">
+      <!----------------------------------------- TITRE ------------------------------------------->
+      <div class="block">
+        <h1>Ajouter un projet</h1>
+        <img src="/images/logo1.png" alt="logo" class="logo">
+      </div>  
+
+      <!----------------------------------------- FORMULAIRE D'AJOUT ------------------------------------------->
+      <form
+        action="/admin/ajouter-projet"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!----------------- TITRE INPUT ------------------>
+        <div class="field">
+          <label class="label">Titre :</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Inscris un titre"
+              name="titre"
+              required
+            />
+          </div>
+        </div>
+
+        <!----------------- DESCRIPTION INPUT ------------------>
+        <div class="field">
+          <label class="label">Description :</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Textarea"
+              name="description"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <!----------------- URL INPUT ------------------>
+        <div class="field">
+          <label class="label">Url du projet :</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Inscris l'URL du projet"
+              name="gitUrl"
+              required
+            />
+          </div>
+        </div>
+
+        <!----------------- INPUT IMAGE ------------------>
+        <div class="file is-boxed" style="margin-bottom: 15px">
+          <label class="file-label">
+            <input class="file-input" type="file" name="image" required />
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label"> Choisis une image.. </span>
+            </span>
+          </label>
+        </div>
+
+        <!----------------- BOUTTON AJOUTER ------------------>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-success"><i class="far fa-plus-square"></i>Ajouter ce projet</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('partials-admin/footer-admin.ejs') %>

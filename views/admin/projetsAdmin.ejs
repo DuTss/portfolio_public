@@ -1,0 +1,67 @@
+<%- include('partials-admin/header-admin.ejs') %>
+<!------------------- PAGE ADMIN AVEC LES PROJETS AFFICHER ------------------------>
+<section class="hero is-fullheight">
+  <div class="container adminContainer">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="content">
+          <a href="/">
+            <img src="/images/logo1.png" alt="logo" class="logo">
+          </a>
+          
+
+          <!----------------------------------------- TITRE ------------------------------------------->            
+            <div class="titrebutton">
+              
+              <h1>Bienvenue dans le tableau de bord, <%= session.pseudo %></h1>
+              <button class="button is-danger"><a href="/auth/logout"><i class="fas fa-sign-out-alt"></i>Se déconnecter</a></button>
+            </div>           
+          
+
+          <div class="titrebutton">
+            <!-------------------- LISTE TOTAL DES PROJETS ADMIN ---------------------->
+            <h2>Liste des <%= total %> projets</h2>
+
+
+            <!----------------- BOUTON AJOUTER ADMIN ------------------>
+            <button class="button is-success"><i class="far fa-plus-square"></i>
+              <a href="/admin/ajouter-projet">Ajouter un projet</a></button>
+          </div>
+
+          <!----------------- TABLEAU ARTICLES ADMIN ------------------>
+          <table class="table is-fullwidth">
+            <tbody>
+              <thead>
+                <tr>
+                  <th><abbr>Titre</abbr></th>
+                  <th><abbr>Description</abbr></th>
+                  <th><abbr >Image</abbr></th>
+                  <th><abbr >Source</abbr></th>
+                  <th><abbr >Modifier</abbr></th>
+                  <th><abbr >Supprimer</abbr></th>
+                </tr>
+              </thead>
+              <!------------- BOUCLE POUR AFFICHER CHACUN DES ARTICLES + BOUTON MODIFIER SUPPRIMER --------------->
+              <% projet.forEach(function(projet) {%>
+              <tr>
+                <td><%=projet.titre%></td>
+                <td><%=projet.description%></td>
+                <td><img src="/images/projets/<%=projet.image%>"></td>
+                <td><a href="<%= projet.gitUrl %>"><%=projet.gitUrl%></a></td>
+                <td><a href="/admin/editer-projet/<%=projet.projetId%>"><button
+                      class="button is-warning"><i class="far fa-edit"></i>Modifier</button></a></td>
+                <td>              
+                  <form action="/admin/supprimer-projet/<%=projet.projetId%>?_method=DELETE" method="POST">
+                    <button class="button is-danger"><i class="far fa-trash-alt"></i>Supprimer</button>
+                  </form>
+                </td>
+              </tr>
+              <%});%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('partials-admin/footer-admin.ejs') %>
